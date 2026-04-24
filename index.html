@@ -36,17 +36,18 @@
       font-weight: 500;
     }
 
-    /* 🔥 CINEMATIC IMAGE SECTION */
+    /* 🔥 PERFECT IMAGE SECTION */
     .hero-image {
       height: 60vh;
 
       background:
-        linear-gradient(to bottom, rgba(247,249,252,0) 70%, #f7f9fc 100%),
+        linear-gradient(to bottom, rgba(247,249,252,0) 80%, #f7f9fc 100%),
         url('healthcare-ai.png');
 
-      background-size: 130%;         /* zoom for cropped feel */
-      background-position: center 20%; /* focus upper portion */
+      background-size: contain;        /* ✅ full image visible */
+      background-position: top center; /* ✅ aligned to top */
       background-repeat: no-repeat;
+      background-color: #f7f9fc;       /* fill empty space */
     }
 
     /* 🔥 TEXT SECTION */
