@@ -27,7 +27,6 @@
     header h1 {
       margin: 0;
       font-size: 22px;
-      font-weight: 700;
     }
 
     nav a {
@@ -109,13 +108,50 @@
       padding: 20px;
       margin-top: 40px;
     }
+
+    /* 🤖 Chatbot Styles */
+    #chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      overflow: hidden;
+      font-size: 14px;
+    }
+
+    #chat-header {
+      background: #0b3d91;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+    }
+
+    #chat-body {
+      height: 200px;
+      padding: 10px;
+      overflow-y: auto;
+    }
+
+    #chat-input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-top: 1px solid #ddd;
+      outline: none;
+    }
   </style>
 </head>
 
 <body>
 
 <header>
-  <h1>OmniGrove Health AI</h1>
+  <h1>
+    <span style="color:#A7F3D0;">Omni</span>Grove 
+    <span style="font-weight:300;">Health AI</span>
+  </h1>
   <nav>
     <a href="#">Home</a>
     <a href="#services">Services</a>
@@ -138,19 +174,19 @@
   <div class="services">
     <div class="card">
       <h4>Medical Image AI</h4>
-      <p>Advanced AI models for radiology, pathology, and clinical diagnostics.</p>
+      <p>Advanced AI models for radiology, pathology, and diagnostics.</p>
     </div>
     <div class="card">
       <h4>EHR Integration</h4>
-      <p>Seamless interoperability with hospital and clinical systems.</p>
+      <p>Seamless integration with hospital systems.</p>
     </div>
     <div class="card">
       <h4>RCM & Billing Automation</h4>
-      <p>Optimize revenue cycle, claims processing, and financial workflows.</p>
+      <p>Optimize revenue cycle and claims processing.</p>
     </div>
     <div class="card">
-      <h4>Regulatory & Compliance</h4>
-      <p>Expert guidance on FDA 510(k), global compliance, and approvals.</p>
+      <h4>Regulatory Consulting</h4>
+      <p>FDA 510(k), compliance, and healthcare standards.</p>
     </div>
   </div>
 </section>
@@ -172,6 +208,39 @@
 <footer>
   <p>© 2026 OmniGrove Health AI. All rights reserved.</p>
 </footer>
+
+<!-- 🤖 Chatbot -->
+<div id="chatbot">
+  <div id="chat-header">AI Assistant</div>
+  <div id="chat-body"></div>
+  <input type="text" id="chat-input" placeholder="Ask about our services..." />
+</div>
+
+<script>
+const input = document.getElementById("chat-input");
+const body = document.getElementById("chat-body");
+
+input.addEventListener("keypress", function(e) {
+  if (e.key === "Enter") {
+    const userText = input.value;
+
+    body.innerHTML += "<div><b>You:</b> " + userText + "</div>";
+
+    let botReply = "Thanks! Our team will contact you shortly.";
+
+    if (userText.toLowerCase().includes("ai")) {
+      botReply = "We offer AI in imaging, RCM automation, EHR integration, and compliance.";
+    } else if (userText.toLowerCase().includes("contact")) {
+      botReply = "You can reach us via email or LinkedIn in the contact section.";
+    }
+
+    body.innerHTML += "<div><b>AI:</b> " + botReply + "</div>";
+
+    input.value = "";
+    body.scrollTop = body.scrollHeight;
+  }
+});
+</script>
 
 </body>
 </html>
