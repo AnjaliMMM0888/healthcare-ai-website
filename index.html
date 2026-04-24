@@ -16,12 +16,16 @@
     }
 
     header {
-      background: #0b3d91;
-      color: white;
-      padding: 20px 40px;
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 20px 40px;
+      z-index: 10;
+      color: white;
     }
 
     header h1 {
@@ -36,43 +40,44 @@
       font-weight: 500;
     }
 
-    /* 🔥 HERO SECTION */
+    /* 🔥 HERO BACKGROUND SECTION */
     .hero {
+      height: 100vh;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 80px 40px;
-      background: #f7f9fc;
-      min-height: 500px;
+      justify-content: center;
+      text-align: center;
+      color: white;
+
+      background: linear-gradient(
+          rgba(11,61,145,0.75),
+          rgba(37,99,235,0.75)
+        ),
+        url('healthcare-ai.png'); /* your generated image */
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
-    .hero-left {
-      width: 50%;
+    .hero-content {
+      max-width: 700px;
+      padding: 20px;
     }
 
-    .hero-left img {
-      width: 100%;
-      border-radius: 12px;
-    }
-
-    .hero-right {
-      width: 50%;
-      padding-left: 40px;
-    }
-
-    .hero-right h2 {
-      font-size: 42px;
+    .hero h2 {
+      font-size: 48px;
       margin-bottom: 20px;
     }
 
-    .hero-right p {
+    .hero p {
       font-size: 18px;
       margin-bottom: 30px;
     }
 
     .btn {
-      background: #0b3d91;
-      color: white;
+      background: white;
+      color: #0b3d91;
       padding: 12px 26px;
       border-radius: 8px;
       text-decoration: none;
@@ -81,7 +86,7 @@
     }
 
     .btn:hover {
-      background: #2563eb;
+      background: #e0e7ff;
     }
 
     .section {
@@ -155,19 +160,10 @@
       outline: none;
     }
 
-    /* 📱 Mobile Responsive */
+    /* 📱 Responsive */
     @media (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-      }
-
-      .hero-left, .hero-right {
-        width: 100%;
-        padding: 0;
-      }
-
-      .hero-right {
-        margin-top: 20px;
+      .hero h2 {
+        font-size: 32px;
       }
     }
 
@@ -189,14 +185,9 @@
   </nav>
 </header>
 
-<!-- 🚀 HERO -->
+<!-- 🚀 HERO WITH BACKGROUND IMAGE -->
 <section class="hero">
-
-  <div class="hero-left">
-    <img src="healthcare-ai.png" alt="AI Healthcare">
-  </div>
-
-  <div class="hero-right">
+  <div class="hero-content">
     <h2>Unified AI for Healthcare Ecosystems</h2>
     <p>
       OmniGrove Health AI delivers end-to-end intelligent healthcare solutions —
@@ -204,7 +195,6 @@
     </p>
     <a href="#contact" class="btn">Book a Consultation</a>
   </div>
-
 </section>
 
 <section class="section" id="services">
