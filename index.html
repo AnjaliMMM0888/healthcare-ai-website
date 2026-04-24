@@ -36,31 +36,43 @@
       font-weight: 500;
     }
 
+    /* 🔥 HERO SECTION */
     .hero {
-      padding: 100px 40px;
-      text-align: center;
-      background: linear-gradient(rgba(11,61,145,0.75), rgba(37,99,235,0.75)),
-                  url('a_clean_modern_high_tech_healthcare_ai_website_l.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 40px;
+      background: #f7f9fc;
+      min-height: 500px;
     }
 
-    .hero h2 {
-      font-size: 44px;
+    .hero-left {
+      width: 50%;
+    }
+
+    .hero-left img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .hero-right {
+      width: 50%;
+      padding-left: 40px;
+    }
+
+    .hero-right h2 {
+      font-size: 42px;
       margin-bottom: 20px;
     }
 
-    .hero p {
+    .hero-right p {
       font-size: 18px;
-      max-width: 700px;
-      margin: 0 auto 30px;
+      margin-bottom: 30px;
     }
 
     .btn {
-      background: white;
-      color: #0b3d91;
+      background: #0b3d91;
+      color: white;
       padding: 12px 26px;
       border-radius: 8px;
       text-decoration: none;
@@ -69,7 +81,7 @@
     }
 
     .btn:hover {
-      background: #e0e7ff;
+      background: #2563eb;
     }
 
     .section {
@@ -109,7 +121,7 @@
       margin-top: 40px;
     }
 
-    /* 🤖 Chatbot Styles */
+    /* 🤖 Chatbot */
     #chatbot {
       position: fixed;
       bottom: 20px;
@@ -142,6 +154,23 @@
       border-top: 1px solid #ddd;
       outline: none;
     }
+
+    /* 📱 Mobile Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+      }
+
+      .hero-left, .hero-right {
+        width: 100%;
+        padding: 0;
+      }
+
+      .hero-right {
+        margin-top: 20px;
+      }
+    }
+
   </style>
 </head>
 
@@ -160,13 +189,22 @@
   </nav>
 </header>
 
+<!-- 🚀 HERO -->
 <section class="hero">
-  <h2>Unified AI for Healthcare Ecosystems</h2>
-  <p>
-    OmniGrove Health AI delivers end-to-end intelligent healthcare solutions —
-    from medical imaging and EHR integration to RCM automation and regulatory compliance.
-  </p>
-  <a href="#contact" class="btn">Book a Consultation</a>
+
+  <div class="hero-left">
+    <img src="healthcare-ai.png" alt="AI Healthcare">
+  </div>
+
+  <div class="hero-right">
+    <h2>Unified AI for Healthcare Ecosystems</h2>
+    <p>
+      OmniGrove Health AI delivers end-to-end intelligent healthcare solutions —
+      from medical imaging and EHR integration to RCM automation and regulatory compliance.
+    </p>
+    <a href="#contact" class="btn">Book a Consultation</a>
+  </div>
+
 </section>
 
 <section class="section" id="services">
