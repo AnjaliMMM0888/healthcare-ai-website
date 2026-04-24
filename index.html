@@ -16,16 +16,12 @@
     }
 
     header {
-      position: absolute;
-      width: 100%;
-      top: 0;
-      left: 0;
+      background: #0b3d91;
+      color: white;
+      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 40px;
-      z-index: 10;
-      color: white;
     }
 
     header h1 {
@@ -40,44 +36,42 @@
       font-weight: 500;
     }
 
-    /* 🔥 HERO BACKGROUND SECTION */
-    .hero {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-
-      background: linear-gradient(
-          rgba(11,61,145,0.75),
-          rgba(37,99,235,0.75)
-        ),
-        url('healthcare-ai.png'); /* your generated image */
-
+    /* 🔥 IMAGE TOP SECTION */
+    .hero-image {
+      height: 50vh;
+      background: url('healthcare-ai.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
     }
 
-    .hero-content {
-      max-width: 700px;
-      padding: 20px;
+    /* 🔥 TEXT SECTION */
+    .hero-text {
+      text-align: center;
+      padding: 60px 20px;
+      background: #ffffff;
+      margin-top: -40px;
+      border-radius: 12px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 
-    .hero h2 {
-      font-size: 48px;
+    .hero-text h2 {
+      font-size: 40px;
       margin-bottom: 20px;
     }
 
-    .hero p {
+    .hero-text p {
       font-size: 18px;
-      margin-bottom: 30px;
+      max-width: 700px;
+      margin: 0 auto 30px;
     }
 
     .btn {
-      background: white;
-      color: #0b3d91;
+      background: #0b3d91;
+      color: white;
       padding: 12px 26px;
       border-radius: 8px;
       text-decoration: none;
@@ -86,7 +80,7 @@
     }
 
     .btn:hover {
-      background: #e0e7ff;
+      background: #2563eb;
     }
 
     .section {
@@ -162,8 +156,8 @@
 
     /* 📱 Responsive */
     @media (max-width: 768px) {
-      .hero h2 {
-        font-size: 32px;
+      .hero-text h2 {
+        font-size: 28px;
       }
     }
 
@@ -185,16 +179,17 @@
   </nav>
 </header>
 
-<!-- 🚀 HERO WITH BACKGROUND IMAGE -->
-<section class="hero">
-  <div class="hero-content">
-    <h2>Unified AI for Healthcare Ecosystems</h2>
-    <p>
-      OmniGrove Health AI delivers end-to-end intelligent healthcare solutions —
-      from medical imaging and EHR integration to RCM automation and regulatory compliance.
-    </p>
-    <a href="#contact" class="btn">Book a Consultation</a>
-  </div>
+<!-- 🔥 IMAGE TOP -->
+<section class="hero-image"></section>
+
+<!-- 🔥 TEXT BELOW -->
+<section class="hero-text">
+  <h2>Unified AI for Healthcare Ecosystems</h2>
+  <p>
+    OmniGrove Health AI delivers end-to-end intelligent healthcare solutions —
+    from medical imaging and EHR integration to RCM automation and regulatory compliance.
+  </p>
+  <a href="#contact" class="btn">Book a Consultation</a>
 </section>
 
 <section class="section" id="services">
